@@ -1,0 +1,10 @@
+1. Overall Description:
+This video demonstrates the operation of the SPARK Hand, a passive adaptive robotic hand with a Kempe mechanism. The video shows three types of grasps: pinching, symmetric scooping, and asymmetric scooping, using a variety of objects such as cards, screws, and oranges. The transitions between grasping modes and the hand's adaptability to different shapes and environments are highlighted.
+
+2. Multimedia Player Information:
+The video is in MP4 format. It can be played with common media players such as VLC Media Player, Windows Media Player, or QuickTime Player.
+
+3. Author Contact Information:
+Jiaqi Yin, Harbin Institute of Technology, yjqhit@gmail.com
+Tianyi Bi, Southern University of Science and Technology, 12311620@mail.sustech.edu.cn
+Wenzeng Zhang, Tsinghua University and X-Institute, zhangwenzeng@x-institute.edu.cn

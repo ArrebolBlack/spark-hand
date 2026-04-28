@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="SPARK Hand: A passive adaptive robotic hand with Kempe mechanism for vertical passive grasp in environmental constraints.">
+  <meta name="keywords" content="SPARK Hand, Robotic Grasping, Kempe Mechanism, Passive Adaptive Gripper, Underactuated Hand">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SPARK Hand: Scooping-Pinching Adaptive Robotic Hand</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!-- ==================== NAVBAR ==================== -->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="#teaser">
+        <span class="icon"><i class="fas fa-home"></i></span>
+      </a>
+      <a class="navbar-item" href="#abstract">Abstract</a>
+      <a class="navbar-item" href="#video">Video</a>
+      <a class="navbar-item" href="#prototype">Prototype</a>
+      <a class="navbar-item" href="#method">Method</a>
+      <a class="navbar-item" href="#experiments">Experiments</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== 1. HERO ==================== -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">SPARK Hand</h1>
+          <h2 class="title is-4 publication-subtitle">
+            Scooping-Pinching Adaptive Robotic Hand with Kempe Mechanism<br>
+            for Vertical Passive Grasp in Environmental Constraints
+          </h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="mailto:yjqhit@gmail.com">Jiaqi Yin</a><sup>1,3</sup>,</span>
+            <span class="author-block">
+              <a href="mailto:12311620@mail.sustech.edu.cn">Tianyi Bi</a><sup>2,3</sup>,</span>
+            <span class="author-block">
+              <a href="mailto:zhangwenzeng@x-institute.edu.cn">Wenzeng Zhang</a><sup>3,4</sup>
+            </span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>1</sup>School of Future Technology, Harbin Institute of Technology,</span>
+            <span class="author-block"><sup>2</sup>Shude College, Southern University of Science and Technology,</span>
+            <span class="author-block"><sup>3</sup>Laboratory of Robotics, X-Institute,</span>
+            <span class="author-block"><sup>4</sup>Department of Mechanical Engineering, Tsinghua University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://ieeexplore.ieee.org/document/11246150"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-ieee"></i></span>
+                  <span>IEEE</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2504.20506"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="./assets/IROS25_2600_FI.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#video"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-play"></i></span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="./assets/poster_3.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-image"></i></span>
+                  <span>Poster</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 2. TEASER ==================== -->
+<section class="hero teaser" id="teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/teaser_graphical_abstract.png" alt="SPARK Hand Graphical Abstract"
+           style="width:100%; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+      <h2 class="subtitle has-text-centered" style="margin-top: 1.5rem;">
+        A passive adaptive robotic hand that automatically switches between
+        <strong>pinching</strong> and <strong>scooping</strong>
+        for surface-constrained grasping.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 3. KEY CONTRIBUTIONS ==================== -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Key Contributions</h2>
+        <div class="columns is-centered">
+          <!-- Card 1 -->
+          <div class="column is-4">
+            <div class="card contribution-card">
+              <div class="card-content">
+                <p class="title is-5">Passive Mode Switching</p>
+                <p class="content">
+                  Seamless transition between pinching and scooping modes
+                  <strong>without additional actuators or sensors</strong>,
+                  driven purely by mechanical interaction with the environment.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="column is-4">
+            <div class="card contribution-card">
+              <div class="card-content">
+                <p class="title is-5">Vertical Fingertip Trajectory</p>
+                <p class="content">
+                  Modified <strong>Kempe linkage</strong> produces a vertical linear
+                  fingertip path, enabling stable surface interaction and consistent
+                  grasping performance.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="column is-4">
+            <div class="card contribution-card">
+              <div class="card-content">
+                <p class="title is-5">Dual Grasping Modes</p>
+                <p class="content">
+                  Effective grasping of thin and flat objects (<strong>cards, screws</strong>)
+                  as well as irregular items (<strong>oranges, keychains</strong>)
+                  that challenge conventional grippers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 4. ABSTRACT ==================== -->
+<section class="section" id="abstract">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            This paper presents the SPARK finger, an innovative passive adaptive robotic finger
+            capable of executing both parallel pinching and scooping grasps. The SPARK finger
+            incorporates a multi-link mechanism with Kempe linkages to achieve a vertical linear
+            fingertip trajectory. Furthermore, a parallelogram linkage ensures the fingertip
+            maintains a fixed orientation relative to the base, facilitating precise and stable
+            manipulation.
+          </p>
+          <p>
+            By integrating these mechanisms with elastic elements, the design enables effective
+            interaction with surfaces, such as tabletops, to handle challenging objects. The finger
+            employs a passive switching mechanism that facilitates seamless transitions between
+            pinching and scooping modes, adapting automatically to various object shapes and
+            environmental constraints without additional actuators. To demonstrate its versatility,
+            the SPARK Hand, equipped with two SPARK fingers, has been developed. Experimental
+            results validate the effectiveness of the SPARK design, highlighting its potential for
+            robotic manipulation in constrained and dynamic environments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 5. PROTOTYPE ==================== -->
+<section class="section" id="prototype">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Prototype</h2>
+    <div class="columns is-centered is-vcentered prototype-grid">
+      <div class="column is-6">
+        <div class="prototype-img-wrapper">
+          <img src="./static/images/Fig1_SPARK_Hand_3_compressed.png"
+               alt="SPARK Hand overview">
+        </div>
+        <p class="has-text-centered" style="margin-top: 0.75rem;">
+          The SPARK Hand: a robotic end-effector consisting of two SPARK fingers
+          on a single base, capable of performing both parallel pinching and scooping grasps.
+        </p>
+      </div>
+      <div class="column is-6">
+        <div class="prototype-img-wrapper">
+          <img src="./static/images/Fig8_Device.png"
+               alt="SPARK Hand prototype">
+        </div>
+        <p class="has-text-centered" style="margin-top: 0.75rem;">
+          (a) 3D model of the SPARK Hand prototype.
+          (b) Physical implementation mounted on a robotic arm for experimental validation.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 6. METHOD ==================== -->
+<section class="section" id="method">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Method</h2>
+
+    <!-- 6a. Mechanism Design -->
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <h3 class="title is-4">Mechanism Design</h3>
+        <div class="columns is-vcentered">
+          <div class="column is-5">
+            <figure class="image">
+              <img src="./static/images/Fig2_Kempe_Mechanism.png"
+                   alt="Kempe Mechanism"
+                   style="border-radius: 10px;">
+            </figure>
+          </div>
+          <div class="column is-7 content has-text-justified">
+            <p>
+              The SPARK finger mechanism consists of three segments — proximal, intermediate, and
+              distal phalanges — interconnected by passive revolute joints. At its core, a
+              <strong>modified Kempe linkage</strong> generates the vertical linear fingertip
+              trajectory crucial for effective environmental compliance. An integrated
+              <strong>parallelogram linkage</strong> maintains constant fingertip orientation
+              throughout the grasping motion.
+            </p>
+            <p>
+              Springs <em>k</em><sub>1</sub> and <em>k</em><sub>2</sub> provide adaptive compliance
+              and restoring forces, while mechanical stoppers (Q<sub>1</sub>, Q<sub>2</sub>,
+              Q<sub>3</sub>) regulate the finger's motion limits, enabling automatic switching
+              between pinching and scooping modes. The link lengths follow a 4:2:1 ratio,
+              ensuring a consistent vertical trajectory while maintaining compactness.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6b. Passive Mode Switching -->
+    <div class="columns is-centered" style="margin-top: 2rem;">
+      <div class="column is-10">
+        <h3 class="title is-4">Passive Mode Switching</h3>
+        <div class="content has-text-centered">
+          <figure class="image">
+            <img src="./static/images/Fig3_Fingertip_Transition.png"
+                 alt="Fingertip transition from pinching to scooping"
+                 style="border-radius: 10px;">
+          </figure>
+          <p>
+            The SPARK finger transitions from <strong>pinching</strong> (left) to
+            <strong>scooping</strong> (right) as it presses downward against a surface.
+            Stopper Q<sub>2</sub> keeps the distal phalanx straight during pinching;
+            when stopper Q<sub>3</sub> engages, the distal phalanx rotates inward for scooping.
+            This transition occurs <strong>passively</strong> — no additional actuators required.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6c. Kinematic Validation -->
+    <div class="columns is-centered" style="margin-top: 2rem;">
+      <div class="column is-10">
+        <h3 class="title is-4">Kinematic Validation</h3>
+        <div class="content has-text-centered">
+          <figure class="image">
+            <img src="./static/images/Fig5_SAM_Simulation_2.png"
+                 alt="SAM Simulation kinematic characteristics"
+                 style="border-radius: 10px;">
+          </figure>
+          <p>
+            (a) Horizontal kinematic characteristic: smooth movement except at initiation,
+            ideal for handling fragile items. (b) Vertical kinematic characteristic:
+            displacement remains consistently zero, confirming the <strong>linear vertical
+            trajectory</strong> achieved by the Kempe linkage.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6d. Technical Details (collapsible) -->
+    <div class="columns is-centered" style="margin-top: 2rem;">
+      <div class="column is-10">
+        <details class="technical-details">
+          <summary class="title is-5" style="cursor: pointer; padding: 0.75rem 0;">
+            <i class="fas fa-chevron-right" style="margin-right: 0.5rem;"></i>
+            Technical Analysis Details
+          </summary>
+          <div class="columns tech-details-grid" style="margin-top: 1rem;">
+            <div class="column is-4">
+              <div class="tech-details-img-wrapper">
+                <img src="./static/images/Fig4_Mathematical_Model.png"
+                     alt="Mathematical Model">
+              </div>
+              <p class="is-size-7 has-text-centered" style="margin-top: 0.5rem;">
+                Simplified mathematical model with D-H parameters
+              </p>
+            </div>
+            <div class="column is-4">
+              <div class="tech-details-img-wrapper">
+                <img src="./static/images/Fig6_Hydrostatic_Model.png"
+                     alt="Force Analysis Model">
+              </div>
+              <p class="is-size-7 has-text-centered" style="margin-top: 0.5rem;">
+                (a) Parallel pinching force analysis; (b) Self-adaptive grasping force analysis
+              </p>
+            </div>
+            <div class="column is-4">
+              <div class="tech-details-img-wrapper">
+                <img src="./static/images/Fig7_Matlab_Analysis.png"
+                     alt="Matlab Grasp Force Analysis">
+              </div>
+              <p class="is-size-7 has-text-centered" style="margin-top: 0.5rem;">
+                Grasp force analysis: (a) parallel grasp; (b) self-adaptive grasp
+              </p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 7. EXPERIMENTS ==================== -->
+<section class="section" id="experiments">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Experiments</h2>
+    <div class="columns is-centered">
+      <!-- Pinching -->
+      <div class="column is-4">
+        <div class="card experiment-card">
+          <div class="card-image">
+            <figure class="image">
+              <img src="./static/images/Fig9_Experiment_1.png"
+                   alt="Pinching Grasp"
+                   style="border-radius: 10px 10px 0 0;">
+            </figure>
+          </div>
+          <div class="card-content">
+            <p class="title is-5">Pinching Grasp</p>
+            <p>
+              Linear clamping to securely grasp thin objects on a flat surface.
+              Demonstrated with a <strong>plastic card</strong> and a
+              <strong>small screw</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Symmetric Scooping -->
+      <div class="column is-4">
+        <div class="card experiment-card">
+          <div class="card-image">
+            <figure class="image">
+              <img src="./static/images/Fig10_Experiment_2.png"
+                   alt="Symmetric Scooping Grasp"
+                   style="border-radius: 10px 10px 0 0;">
+            </figure>
+          </div>
+          <div class="card-content">
+            <p class="title is-5">Symmetric Scooping</p>
+            <p>
+              Both fingers rotate inward symmetrically to slide beneath objects.
+              Tested with a <strong>thin card</strong>, an <strong>orange</strong>,
+              and a <strong>keychain</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Asymmetric Scooping -->
+      <div class="column is-4">
+        <div class="card experiment-card">
+          <div class="card-image">
+            <figure class="image">
+              <img src="./static/images/Fig11_Experiment_3.png"
+                   alt="Asymmetric Scooping Grasp"
+                   style="border-radius: 10px 10px 0 0;">
+            </figure>
+          </div>
+          <div class="card-content">
+            <p class="title is-5">Asymmetric Scooping</p>
+            <p>
+              Tilted device with one finger scooping while the other supports,
+              effective for <strong>wide and thin objects</strong> like flat cards.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 8. VIDEO ==================== -->
+<section class="section" id="video">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video"
+             style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+          <video controls muted preload playsinline
+                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px;">
+            <source src="./static/videos/demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <p style="margin-top: 0.75rem; font-size: 0.9rem;">
+          The video demonstrates the SPARK Hand performing three types of grasps:
+          pinching, symmetric scooping, and asymmetric scooping.
+          Various objects, including thin cards, screws, and irregular items,
+          are manipulated to highlight the hand's versatility and adaptability.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 9. POSTER / SLIDES ==================== -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Resources</h2>
+        <div class="columns is-centered">
+          <div class="column is-4">
+            <a href="./assets/poster_3.pdf"
+               class="button is-large is-fullwidth is-dark is-rounded">
+              <span class="icon"><i class="fas fa-image"></i></span>
+              <span>Poster</span>
+            </a>
+          </div>
+          <div class="column is-4">
+            <a href="./assets/TuCT19.8.pptx"
+               class="button is-large is-fullwidth is-dark is-rounded">
+              <span class="icon"><i class="fas fa-file-powerpoint"></i></span>
+              <span>Presentation</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 10. BIBTEX ==================== -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Citation</h2>
+    <pre><code>@inproceedings{yin2025spark,
+  author    = {Yin, Jiaqi and Bi, Tianyi and Zhang, Wenzeng},
+  title     = {SPARK Hand: Scooping-Pinching Adaptive Robotic Hand with Kempe Mechanism for Vertical Passive Grasp in Environmental Constraints},
+  booktitle = {IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  year      = {2025}
+}</code></pre>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Acknowledgements:</strong> This research is supported by the Foundation of
+        Enhanced Student Research Training (E-SRT) and Open Research for Innovation Challenges
+        (ORIC), X-Institute.
+      </p>
+      <p>
+        This website is licensed under a
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+          Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+      </p>
+      <p>
+        Built using the <a href="https://nerfies.github.io">Nerfies</a> website template.
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
