@@ -49,6 +49,11 @@ body {
   display: inline-block;
 }
 
+.affiliation-block {
+  line-height: 1.8;
+  margin-top: 0.5rem;
+}
+
 .publication-video {
     position: relative;
     width: 100%;

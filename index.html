@@ -47,6 +47,7 @@
       <a class="navbar-item" href="#prototype">Prototype</a>
       <a class="navbar-item" href="#method">Method</a>
       <a class="navbar-item" href="#experiments">Experiments</a>
+      <a class="navbar-item" href="#BibTeX">Citation</a>
     </div>
   </div>
 </nav>
@@ -72,11 +73,11 @@
             </span>
           </div>
 
-          <div class="is-size-6 publication-authors">
-            <span class="author-block"><sup>1</sup>School of Future Technology, Harbin Institute of Technology,</span>
-            <span class="author-block"><sup>2</sup>Shude College, Southern University of Science and Technology,</span>
-            <span class="author-block"><sup>3</sup>Laboratory of Robotics, X-Institute,</span>
-            <span class="author-block"><sup>4</sup>Department of Mechanical Engineering, Tsinghua University</span>
+          <div class="is-size-6 publication-authors affiliation-block">
+            <div><sup>1</sup>School of Future Technology, Harbin Institute of Technology</div>
+            <div><sup>2</sup>Shude College, Southern University of Science and Technology</div>
+            <div><sup>3</sup>Laboratory of Robotics, X-Institute</div>
+            <div><sup>4</sup>Department of Mechanical Engineering, Tsinghua University</div>
           </div>
 
           <div class="column has-text-centered">
@@ -222,7 +223,32 @@
   </div>
 </section>
 
-<!-- ==================== 5. PROTOTYPE ==================== -->
+<!-- ==================== 5. VIDEO ==================== -->
+<section class="section" id="video">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video"
+             style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+          <video controls muted preload playsinline
+                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px;">
+            <source src="./static/videos/demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <p style="margin-top: 0.75rem; font-size: 0.9rem;">
+          The video demonstrates the SPARK Hand performing three types of grasps:
+          pinching, symmetric scooping, and asymmetric scooping.
+          Various objects, including thin cards, screws, and irregular items,
+          are manipulated to highlight the hand's versatility and adaptability.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 6. PROTOTYPE ==================== -->
 <section class="section" id="prototype">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Prototype</h2>
@@ -251,12 +277,12 @@
   </div>
 </section>
 
-<!-- ==================== 6. METHOD ==================== -->
+<!-- ==================== 7. METHOD ==================== -->
 <section class="section" id="method">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Method</h2>
 
-    <!-- 6a. Mechanism Design -->
+    <!-- 7a. Mechanism Design -->
     <div class="columns is-centered">
       <div class="column is-10">
         <h3 class="title is-4">Mechanism Design</h3>
@@ -289,7 +315,7 @@
       </div>
     </div>
 
-    <!-- 6b. Passive Mode Switching -->
+    <!-- 7b. Passive Mode Switching -->
     <div class="columns is-centered" style="margin-top: 2rem;">
       <div class="column is-10">
         <h3 class="title is-4">Passive Mode Switching</h3>
@@ -310,7 +336,7 @@
       </div>
     </div>
 
-    <!-- 6c. Kinematic Validation -->
+    <!-- 7c. Kinematic Validation -->
     <div class="columns is-centered" style="margin-top: 2rem;">
       <div class="column is-10">
         <h3 class="title is-4">Kinematic Validation</h3>
@@ -321,16 +347,16 @@
                  style="border-radius: 10px;">
           </figure>
           <p>
-            (a) Horizontal kinematic characteristic: smooth movement except at initiation,
-            ideal for handling fragile items. (b) Vertical kinematic characteristic:
-            displacement remains consistently zero, confirming the <strong>linear vertical
-            trajectory</strong> achieved by the Kempe linkage.
+            (a) Horizontal displacement of the fingertip during motion: smooth trajectory with minimal
+            lateral deviation at initiation, ideal for handling fragile items. (b) Lateral displacement
+            of the fingertip: remains consistently near zero throughout the motion, confirming the
+            <strong>straight vertical trajectory</strong> achieved by the modified Kempe linkage.
           </p>
         </div>
       </div>
     </div>
 
-    <!-- 6d. Technical Details (collapsible) -->
+    <!-- 7d. Technical Details (collapsible) -->
     <div class="columns is-centered" style="margin-top: 2rem;">
       <div class="column is-10">
         <details class="technical-details">
@@ -373,7 +399,7 @@
   </div>
 </section>
 
-<!-- ==================== 7. EXPERIMENTS ==================== -->
+<!-- ==================== 8. EXPERIMENTS ==================== -->
 <section class="section" id="experiments">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Experiments</h2>
@@ -441,31 +467,6 @@
   </div>
 </section>
 
-<!-- ==================== 8. VIDEO ==================== -->
-<section class="section" id="video">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video"
-             style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
-          <video controls muted preload playsinline
-                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px;">
-            <source src="./static/videos/demo.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <p style="margin-top: 0.75rem; font-size: 0.9rem;">
-          The video demonstrates the SPARK Hand performing three types of grasps:
-          pinching, symmetric scooping, and asymmetric scooping.
-          Various objects, including thin cards, screws, and irregular items,
-          are manipulated to highlight the hand's versatility and adaptability.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ==================== 9. POSTER / SLIDES ==================== -->
 <section class="section">
   <div class="container is-max-desktop">
@@ -497,11 +498,13 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">Citation</h2>
-    <pre><code>@inproceedings{yin2025spark,
+    <pre><code>@inproceedings{11246150,
   author    = {Yin, Jiaqi and Bi, Tianyi and Zhang, Wenzeng},
-  title     = {SPARK Hand: Scooping-Pinching Adaptive Robotic Hand with Kempe Mechanism for Vertical Passive Grasp in Environmental Constraints},
-  booktitle = {IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
-  year      = {2025}
+  booktitle = {2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  title     = {{SPARK Hand}: Scooping-Pinching Adaptive Robotic Hand with {Kempe} Mechanism for Vertical Passive Grasp in Environmental Constraints},
+  year      = {2025},
+  pages     = {4729-4734},
+  doi       = {10.1109/IROS60139.2025.11246150}
 }</code></pre>
   </div>
 </section>
@@ -511,17 +514,13 @@
   <div class="container">
     <div class="content has-text-centered">
       <p>
-        <strong>Acknowledgements:</strong> This research is supported by the Foundation of
+        This research is supported by the Foundation of
         Enhanced Student Research Training (E-SRT) and Open Research for Innovation Challenges
         (ORIC), X-Institute.
       </p>
       <p>
-        This website is licensed under a
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-          Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-      </p>
-      <p>
-        Built using the <a href="https://nerfies.github.io">Nerfies</a> website template.
+        Website template adapted from <a href="https://nerfies.github.io">Nerfies</a>.
+        Website content, figures, and videos &copy; the authors unless otherwise noted.
       </p>
     </div>
   </div>
