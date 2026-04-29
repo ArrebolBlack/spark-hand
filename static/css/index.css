@@ -114,13 +114,15 @@ body {
 /* Technical details collapsible */
 .technical-details {
   background: #f5f5f5;
-  border-radius: 10px;
-  padding: 1rem 1.5rem;
+  border-radius: 14px;
+  padding: 1.4rem 1.8rem 1.8rem;
 }
 
 .technical-details summary {
   list-style: none;
   user-select: none;
+  display: flex;
+  align-items: center;
 }
 
 .technical-details summary::-webkit-details-marker {
@@ -129,11 +131,63 @@ body {
 
 .technical-details[open] summary .fa-chevron-right {
   transform: rotate(90deg);
-  transition: transform 0.2s ease;
 }
 
-.technical-details summary .fa-chevron-right {
-  transition: transform 0.2s ease;
+.technical-intro {
+  margin: 1rem 0 1.4rem;
+  color: #555;
+  max-width: 860px;
+  line-height: 1.55;
+}
+
+/* Analysis 2-column grid */
+.analysis-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.85fr) minmax(320px, 1.35fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.analysis-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.analysis-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.analysis-card > img {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.analysis-card p {
+  margin-top: 0.85rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: #444;
+  text-align: center;
+}
+
+.force-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.force-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 10px;
 }
 
 /* Section spacing */
@@ -164,24 +218,6 @@ body {
   border-radius: 8px;
 }
 
-/* Technical details: constrained image containers */
-.tech-details-grid .tech-details-img-wrapper {
-  height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  border-radius: 8px;
-  padding: 0.5rem;
-}
-
-.tech-details-grid .tech-details-img-wrapper img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-  border-radius: 6px;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   .contribution-card .card-content {
@@ -193,7 +229,14 @@ body {
   .prototype-img-wrapper {
     height: 240px;
   }
-  .tech-details-grid .tech-details-img-wrapper {
-    height: 180px;
+  .analysis-grid {
+    grid-template-columns: 1fr;
+  }
+  .force-grid {
+    grid-template-columns: 1fr;
+  }
+  .analysis-card > img,
+  .force-grid img {
+    height: auto;
   }
 }

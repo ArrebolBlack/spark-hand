@@ -175,7 +175,7 @@
           <div class="column is-4">
             <div class="card contribution-card">
               <div class="card-content">
-                <p class="title is-5">Thin/Flat Object Grasping in Constraints</p>
+                <p class="title is-5">Thin/Flat Object Grasping under Constraints</p>
                 <p class="content">
                   Enables cards, screws, and irregular objects to be grasped from surfaces using
                   <strong>pinching, symmetric scooping, and asymmetric scooping</strong>.
@@ -357,37 +357,30 @@
     <div class="columns is-centered" style="margin-top: 2rem;">
       <div class="column is-10">
         <details class="technical-details">
-          <summary class="title is-5" style="cursor: pointer; padding: 0.75rem 0;">
-            <i class="fas fa-chevron-right" style="margin-right: 0.5rem;"></i>
-            Technical Analysis Details
+          <summary style="cursor: pointer; padding: 0.75rem 0;">
+            <i class="fas fa-chevron-right" style="margin-right: 0.5rem; transition: transform 0.2s;"></i>
+            <span style="font-size: 1.2rem; font-weight: 700;">Technical Analysis Details</span>
           </summary>
-          <div class="columns tech-details-grid" style="margin-top: 1rem;">
-            <div class="column is-4">
-              <div class="tech-details-img-wrapper">
-                <img src="./static/images/Fig4_Mathematical_Model.png"
-                     alt="Mathematical Model">
-              </div>
-              <p class="is-size-7 has-text-centered" style="margin-top: 0.5rem;">
-                Simplified mathematical model with D-H parameters
-              </p>
+          <p class="technical-intro">
+            A compact summary of the kinematic and static analyses used to validate
+            the vertical fingertip motion and grasping force behavior of the SPARK finger.
+          </p>
+          <div class="analysis-grid">
+            <div class="analysis-card">
+              <h4>Kinematic Analysis</h4>
+              <img src="./static/images/Fig4_Mathematical_Model.png"
+                   alt="SPARK finger kinematic model">
+              <p>Simplified kinematic model for D-H parameter derivation and fingertip trajectory analysis.</p>
             </div>
-            <div class="column is-4">
-              <div class="tech-details-img-wrapper">
+            <div class="analysis-card">
+              <h4>Static Grasping Force Analysis</h4>
+              <div class="force-grid">
                 <img src="./static/images/Fig6_Hydrostatic_Model.png"
-                     alt="Force Analysis Model">
-              </div>
-              <p class="is-size-7 has-text-centered" style="margin-top: 0.5rem;">
-                (a) Parallel pinching force analysis; (b) Self-adaptive grasping force analysis
-              </p>
-            </div>
-            <div class="column is-4">
-              <div class="tech-details-img-wrapper">
+                     alt="Static force model">
                 <img src="./static/images/Fig7_Matlab_Analysis.png"
-                     alt="Matlab Grasp Force Analysis">
+                     alt="Grasping force analysis">
               </div>
-              <p class="is-size-7 has-text-centered" style="margin-top: 0.5rem;">
-                Grasp force analysis: (a) parallel grasp; (b) self-adaptive grasp
-              </p>
+              <p>Static force model and simulated grasping-force characteristics for pinching and self-adaptive grasping.</p>
             </div>
           </div>
         </details>
@@ -495,7 +488,7 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">Citation</h2>
-    <pre><code>@inproceedings{11246150,
+    <pre><code>@inproceedings{yin2025spark,
   author    = {Yin, Jiaqi and Bi, Tianyi and Zhang, Wenzeng},
   booktitle = {2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
   title     = {{SPARK Hand}: Scooping-Pinching Adaptive Robotic Hand with {Kempe} Mechanism for Vertical Passive Grasp in Environmental Constraints},
