@@ -143,7 +143,7 @@ body {
 /* Analysis 2-column grid */
 .analysis-grid {
   display: grid;
-  grid-template-columns: minmax(220px, 0.85fr) minmax(320px, 1.35fr);
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   align-items: stretch;
 }
